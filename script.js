@@ -8,7 +8,54 @@ document.addEventListener('DOMContentLoaded', () => {
     let historyIndex = -1;
     let portfolioData = null;
 
-    // Load Data JSON
+    // Données de secours intégrées si data.json n'est pas accessible en local
+    const fallbackData = {
+        "personal": {
+            "name": "Alexandre Dupont",
+            "role": "Étudiant / Passionné en Cybersécurité & Pentest",
+            "status": "À la recherche d'un stage / alternance en Sécurité Offensives & Réseaux",
+            "location": "France",
+            "email": "alexandre.dupont@email.com",
+            "github": "https://github.com/votre-user",
+            "linkedin": "https://linkedin.com/in/votre-profil",
+            "tryhackme": "https://tryhackme.com/p/votre-user"
+        },
+        "skills": {
+            "Sécurité Offensive": ["Pentesting Web", "Network Scanning (Nmap, Masscan)", "Burp Suite / OWASP ZAP", "Privilege Escalation (Linux/Win)"],
+            "Analyse & Dégât": ["Wireshark / PCAP Analysis", "Reverse Engineering de base", "GDB, Ghidra", "SIEM (Splunk, ELK)"],
+            "Développement & Scripting": ["Python (Scapy, Requests, PWN)", "Bash & Linux SysAdmin", "C / C++ (Notions)", "Git & CI/CD"],
+            "Systèmes & Réseaux": ["Linux (Debian, Arch, Kali)", "Active Directory basics", "Docker & Virtualisation", "VPN, Firewalls, PfSense"]
+        },
+        "projects": [
+            {
+                "id": "proj-1",
+                "name": "Network Recon & Scanner CLI",
+                "tech": "Python, Scapy, Socket",
+                "description": "Script Python modulaire permettant de scanner un sous-réseau, d'identifier les ports ouverts et de détecter la bannière des services actifs.",
+                "link": "https://github.com/votre-user/scanner-cli"
+            },
+            {
+                "id": "proj-2",
+                "name": "CTF Writeups & Lab Setup",
+                "tech": "Docker, Bash, Markdown",
+                "description": "Documentation détaillée de résolution de box (Root-Me, TryHackMe) ainsi qu'un environnement automatisé sous Docker pour s'entraîner.",
+                "link": "https://github.com/votre-user/ctf-writeups"
+            },
+            {
+                "id": "proj-3",
+                "name": "Active Directory Lab Automation",
+                "tech": "PowerShell, Vagrant, VirtualBox",
+                "description": "Automatisation du déploiement d'un domaine Active Directory vulnérable avec des configurations erronées courantes (Kerberoasting, AS-REP Roast).",
+                "link": "https://github.com/votre-user/ad-lab-auto"
+            }
+        ],
+        "certifications": [
+            "eJPT (eLearnSecurity Junior Penetration Tester) - En cours",
+            "TryHackMe Top 5% Rank",
+            "Certification Pix - Cyber / Sécurité numérique"
+        ]
+    };
+
     fetchData();
 
     async function fetchData() {
@@ -16,12 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch('data.json');
             if (!res.ok) throw new Error('HTTP error ' + res.status);
             portfolioData = await res.json();
-            showWelcome();
         } catch (err) {
-            console.warn('Impossible de charger data.json directement via fetch (probablement testé en file:// local). Utilisation du secours.');
-            portfolioData = getFallbackData();
-            showWelcome();
+            console.warn('Lecture de data.json impossible en file:// local. Utilisation des données intégrées.');
+            portfolioData = fallbackData;
         }
+        showWelcome();
     }
 
     // Input listener
@@ -55,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Keep focus on input when clicking terminal
     document.addEventListener('click', () => {
         input.focus();
     });
@@ -219,9 +264,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function escapeHtml(text) {
         return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
-
-    function getFallbackData() {
-        return ${JSON.stringify(data_json, null, 4)};
     }
 });
