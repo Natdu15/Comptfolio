@@ -1,0 +1,66 @@
+{
+    "personal": {
+        "name": "Alexandre Dupont",
+        "role": "Étudiant / Passionné en Cybersécurité & Pentest",
+        "status": "À la recherche d'un stage / alternance en Sécurité Offensives & Réseaux",
+        "location": "France",
+        "email": "alexandre.dupont@email.com",
+        "github": "https://github.com/votre-user",
+        "linkedin": "https://linkedin.com/in/votre-profil",
+        "tryhackme": "https://tryhackme.com/p/votre-user"
+    },
+    "skills": {
+        "Sécurité Offensive": [
+            "Pentesting Web",
+            "Network Scanning (Nmap, Masscan)",
+            "Burp Suite / OWASP ZAP",
+            "Privilege Escalation (Linux/Win)"
+        ],
+        "Analyse & Dégât": [
+            "Wireshark / PCAP Analysis",
+            "Reverse Engineering de base",
+            "GDB, Ghidra",
+            "SIEM (Splunk, ELK)"
+        ],
+        "Développement & Scripting": [
+            "Python (Scapy, Requests, PWN)",
+            "Bash & Linux SysAdmin",
+            "C / C++ (Notions)",
+            "Git & CI/CD"
+        ],
+        "Systèmes & Réseaux": [
+            "Linux (Debian, Arch, Kali)",
+            "Active Directory basics",
+            "Docker & Virtualisation",
+            "VPN, Firewalls, PfSense"
+        ]
+    },
+    "projects": [
+        {
+            "id": "proj-1",
+            "name": "Network Recon & Scanner CLI",
+            "tech": "Python, Scapy, Socket",
+            "description": "Script Python modulaire permettant de scanner un sous-réseau, d'identifier les ports ouverts et de détecter la bannière des services actifs.",
+            "link": "https://github.com/votre-user/scanner-cli"
+        },
+        {
+            "id": "proj-2",
+            "name": "CTF Writeups & Lab Setup",
+            "tech": "Docker, Bash, Markdown",
+            "description": "Documentation détaillée de résolution de box (Root-Me, TryHackMe) ainsi qu'un environnement automatisé sous Docker pour s'entraîner.",
+            "link": "https://github.com/votre-user/ctf-writeups"
+        },
+        {
+            "id": "proj-3",
+            "name": "Active Directory Lab Automation",
+            "tech": "PowerShell, Vagrant, VirtualBox",
+            "description": "Automatisation du déploiement d'un domaine Active Directory vulnérable avec des configurations erronées courantes (Kerberoasting, AS-REP Roast).",
+            "link": "https://github.com/votre-user/ad-lab-auto"
+        }
+    ],
+    "certifications": [
+        "eJPT (eLearnSecurity Junior Penetration Tester) - En cours",
+        "TryHackMe Top 5% Rank",
+        "Certification Pix - Cyber / Sécurité numérique"
+    ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="window-title">guest@sec-ops: ~ (zsh)</div>
+            <div class="window-actions">
+                <span class="status-indicator"></span> ONLINE
+            </div>
+        </div>
+        
+        <div class="terminal-body" id="terminal-body">
+            <div id="terminal-output"></div>
+            
+            <div class="input-line">
+                <span class="prompt">
+                    <span class="user">guest</span><span class="at">@</span><span class="host">sec-ops</span>:<span class="path">~</span><span class="symbol">$</span>
+                </span>
+                <input type="text" id="cli-input" autofocus autocomplete="off" spellcheck="false" aria-label="Terminal Input">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
